@@ -8024,9 +8024,10 @@ function Lunar.Template:ParseTemplateData()
 --Here
 											-- If no spell was found, check if it was a spell mount
 											-- (Spell mounts are saved with just the spell ID for the name)
+											local mountIDs =  C_MountJournal.GetMountIDs()
 											if not newName and companionCheck then
 												for i = 1, C_MountJournal.GetNumMounts() do 
-													scanName, _, scanTexture = C_MountJournal.GetMountInfo(i);
+													scanName, _, scanTexture = C_MountJournal.GetMountInfoByID(mountIDs[i]);
 													scanTexture = string.lower(scanTexture);
 													if (scanName == spellID) then
 														newName = spellID;
@@ -8092,9 +8093,10 @@ function Lunar.Template:ParseTemplateData()
 								
 									-- If no spell was found, check if it was a spell mount
 									-- (Spell mounts are saved with just the spell ID for the name)
+									local mountIDs =  C_MountJournal.GetMountIDs()
 									if not newName and not isNotLearned then
 										for i = 1, C_MountJournal.GetNumMounts() do 
-											scanName, _, scanTexture = C_MountJournal.GetMountInfo(i);
+											scanName, _, scanTexture = C_MountJournal.GetMountInfoByID(mountIDs[i]);
 											scanTexture = string.lower(scanTexture);
 											if (scanTexture == objectTexture) then
 												newName = scanName;

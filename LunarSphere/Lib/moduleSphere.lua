@@ -894,7 +894,7 @@ function Lunar.Sphere:SetSphereColor(r, g, b)
 		if (not ((LunarSphereSettings.sphereSkin > Lunar.includedSpheres) and (LunarSphereSettings.sphereSkin <= Lunar.includedSpheres + 2))) then
 			sphereData.sphereTexture:GetNormalTexture():SetVertexColor(r, g, b);
 		end
-		sphereData.sphereTexture2:SetLight(1, 0, 0, -0.707, -0.707, 0.7, r, g, b, 1, r, g, b);
+		--sphereData.sphereTexture2:SetLight(1, 0, 0, -0.707, -0.707, 0.7, r, g, b, 1, r, g, b);
 	end
 end
 

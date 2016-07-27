@@ -1,4 +1,4 @@
-﻿## Interface: 60220
+﻿## Interface: 70000
 ##
 ## Version: 1.26
 ##
