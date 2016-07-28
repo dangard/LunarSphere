@@ -1,11 +1,11 @@
-﻿## Interface: 60220
+﻿## Interface: 70000
 ##
-## Version: 1.26
+## Version: 1.30
 ##
 ## Author: Moongaze (Twisting Nether)
 ## Fixer:  Shaun Voysey
 ##
-## Title: LunarSphere v.1.26
+## Title: LunarSphere v.1.30
 ##
 ## Notes: A universal sphere for all classes
 ## Title-zhTW: LunarSphere 全職業多功能球體插件 v.1.26

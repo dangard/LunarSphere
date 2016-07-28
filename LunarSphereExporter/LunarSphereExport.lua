@@ -21,7 +21,7 @@ if (not Lunar.Export) then
 	Lunar.Export = {};
 end
 
-Lunar.Export.version = 1.26;
+Lunar.Export.version = 1.30;
 
 function Lunar.Export:ExportData(dataType, arg1, arg2)
 

@@ -22,7 +22,7 @@ if (not Lunar.Button) then
 end
 
 -- Set our current version for the module (used for version checking later on)
-Lunar.Button.version = 1.26;
+Lunar.Button.version = 1.30;
 
 -- Create post WOW 2.2 bug fix, if Stage 5 comes out before 2.2 comes out.
 -- Otherwise, I will rename GetActionFromMacroText in this code to SecureCmdOptionParse
@@ -200,7 +200,7 @@ Lunar.cooldownEffectFunction = {
 			button.cooldown:Hide();
 			button:SetAlpha(1);
 			_G[button:GetName() .. "Icon"]:SetAlpha(1);
-			CooldownFrame_SetTimer(button.readyShine, startTime, duration, enabled)
+			CooldownFrame_Set(button.readyShine, startTime, duration, enabled)
 		end
 	end,
 	}
@@ -364,8 +364,8 @@ local buttonOnLeave = [[
 		totalElapsed = 0
 		-- Broken in 3.0.8 patch, 3.0.9 may have resolved the issue with new code, check back then.
 
---		CooldownFrame_SetTimer(self.readyShine, GetTime(), menuDelay, 1)
-		CooldownFrame_SetTimer(frame, GetTime(), menuDelay, 1)
+--		CooldownFrame_Set(self.readyShine, GetTime(), menuDelay, 1)
+		CooldownFrame_Set(frame, GetTime(), menuDelay, 1)
 --		control:SetAnimating(true);
 		--SetUpAnimation(self, "SetScale", "if (elapsedFraction >= 1) then return 0.001; end; return 1;", menuDelay, nil, nil)
 		--SetUpAnimation(frame, updateFunc, posBody, totalTime, postFunc, reverse);
@@ -6125,7 +6125,7 @@ function Lunar.Button.OnUpdate(self, elapsed, button)
 					_G[self:GetName() .. "Icon"]:SetAlpha(1);
 
 					if (LunarSphereSettings.cooldownShowShine == true) then
-						CooldownFrame_SetTimer(self.readyShine, GetTime(), 0.1, 1)
+						CooldownFrame_Set(self.readyShine, GetTime(), 0.1, 1)
 					end
 				end
 

@@ -1,8 +1,8 @@
-## Interface: 60200
+## Interface: 70000
 ##
 ## Title: LunarSphere Data Exporter v.2.00
 ##
-## Version: 1.25
+## Version: 1.30
 ##
 ## Notes: Handles the exporting of data from LunarSphere so other users can import said data.
 ##

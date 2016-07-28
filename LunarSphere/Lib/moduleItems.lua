@@ -35,7 +35,7 @@ if (not Lunar.Items) then
 end
 
 -- Set our current version for the module (used for version checking later on)
-Lunar.Items.version = 1.26;
+Lunar.Items.version = 1.30;
 
 -- Create our database settings
 Lunar.Items.RunInitialize = false;
@@ -567,7 +567,10 @@ function Lunar.Items:BuildLookupStrings()
 		end
 	end
 
-	local tempWeapon,tempArmor,_,tempConsume = GetAuctionItemClasses()
+	local tempWeapon = GetItemClassInfo(LE_ITEM_CLASS_WEAPON)
+	local tempArmor = GetItemClassInfo(LE_ITEM_CLASS_ARMOR)
+	local tempConsume = GetItemClassInfo(LE_ITEM_CLASS_CONSUMABLE)
+	-- local tempWeapon,tempArmor,_,tempConsume = GetAuctionItemClasses()
 	local _, tempReagent = GetAuctionItemSubClasses(10);
 
 	if (not searchData.weapon) or (searchData.weapon == "") then
@@ -1427,11 +1430,13 @@ function Lunar.Items:ScanForSpellMounts()
 --	Lunar.API:Print("Locale  " .. locale);
 
 
+   local mountIDs =  C_MountJournal.GetMountIDs()
+
 -- Mount Stuff is Here.
 	for index = 1, C_MountJournal.GetNumMounts() do 
-		local spellName, spellID, _, _, isUsable, _, isFavourite, _, _, charHidden, isOwned = C_MountJournal.GetMountInfo(index);
+		local spellName, spellID, _, _, isUsable, _, isFavourite, _, _, charHidden, isOwned = C_MountJournal.GetMountInfoByID(mountIDs[index]);
 
-		local spellTexture, _, _, _, mountType = C_MountJournal.GetMountInfoExtra(index);
+		local spellTexture, _, _, _, mountType = C_MountJournal.GetMountInfoExtraByID(mountIDs[index]);
 
 		speed = 60;
 		itemLevel = 20;

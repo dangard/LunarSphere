@@ -20,7 +20,7 @@ end
 Lunar.Sphere = {};
 
 -- Set our current version for the module (used for version checking later on)
-Lunar.Sphere.version = 1.26;
+Lunar.Sphere.version = 1.30;
 
 -- Set some settings for Lunar
 Lunar.combatLockdown = false;		-- Tracks if we're in combat
@@ -894,7 +894,7 @@ function Lunar.Sphere:SetSphereColor(r, g, b)
 		if (not ((LunarSphereSettings.sphereSkin > Lunar.includedSpheres) and (LunarSphereSettings.sphereSkin <= Lunar.includedSpheres + 2))) then
 			sphereData.sphereTexture:GetNormalTexture():SetVertexColor(r, g, b);
 		end
-		sphereData.sphereTexture2:SetLight(1, 0, 0, -0.707, -0.707, 0.7, r, g, b, 1, r, g, b);
+		--sphereData.sphereTexture2:SetLight(1, 0, 0, -0.707, -0.707, 0.7, r, g, b, 1, r, g, b);
 	end
 end
 
