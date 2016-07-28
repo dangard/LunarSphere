@@ -35,7 +35,7 @@ if (not Lunar.Items) then
 end
 
 -- Set our current version for the module (used for version checking later on)
-Lunar.Items.version = 1.26;
+Lunar.Items.version = 1.30;
 
 -- Create our database settings
 Lunar.Items.RunInitialize = false;

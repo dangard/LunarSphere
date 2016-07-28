@@ -25,7 +25,7 @@ Lunar.Memory = Lunar.Memory or {};
 
 -- Update version tracking
 
-Lunar.Memory.version = 1.26;
+Lunar.Memory.version = 1.30;
 
 -- /***********************************************
 --  * Variable Setup

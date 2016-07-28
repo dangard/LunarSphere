@@ -71,7 +71,7 @@
 
 LUNARSPHERE_CHAT = "|cFF82B8E1Lunar|cFFA1CAE8Sph|cFFC7DFF1ere: |r";
 LUNAR_ICON_PREFIX = "Interface\\Icons\\"
-LUNAR_CURRENT_VERSION = 1.26;
+LUNAR_CURRENT_VERSION = 1.30;
 
 -- Define built-in texture counts
 Lunar.includedButtons = 38;
