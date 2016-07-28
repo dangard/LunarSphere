@@ -3500,9 +3500,9 @@ end
 --			LunarSphereSettings.buttonData[buttonID]["buttonType" .. clickType] = 1;
 		end
 
-if ((LunarSphereSettings.debugSpellAdd == true) and (Lunar.Button.debugTexture ~= nil )) then
-	cursorType = nil;
-end
+		if ((LunarSphereSettings.debugSpellAdd == true) and (Lunar.Button.debugTexture ~= nil )) then
+			cursorType = nil;
+		end
 
 		-- If it was a spell drag ...
 		if (cursorType == "spell") then

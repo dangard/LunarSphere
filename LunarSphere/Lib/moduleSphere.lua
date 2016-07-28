@@ -510,10 +510,10 @@ function Lunar.Sphere:Initialize()
 --	sphereData.sphereShine:RegisterEvent("BAG_UPDATE");
 	sphereData.sphereShine:RegisterEvent("PET_BAR_UPDATE_COOLDOWN");
 --	sphereData.sphereShine:RegisterEvent("BAG_UPDATE_COOLDOWN");
---sphereData.sphereShine:RegisterEvent("PLAYER_AURAS_CHANGED");
---sphereData.sphereShine:RegisterEvent("SPELL_UPDATE_USABLE");
-sphereData.sphereShine:RegisterEvent("SPELL_UPDATE_COOLDOWN");
-sphereData.sphereShine:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED");
+--	sphereData.sphereShine:RegisterEvent("PLAYER_AURAS_CHANGED");
+--	sphereData.sphereShine:RegisterEvent("SPELL_UPDATE_USABLE");
+	sphereData.sphereShine:RegisterEvent("SPELL_UPDATE_COOLDOWN");
+	sphereData.sphereShine:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED");
 
 	sphereData.sphereShine:SetScript("OnEvent", 
 	function (self, event, ...) 
@@ -834,7 +834,7 @@ function Lunar.Sphere:SetPortraitBorder()
 	-- is set to a 3D portrait, continue
 
 	sphereData.background:SetNormalTexture(LUNAR_ART_PATH .. "sphereBackground");
---	if (LunarSphereSettings.sphereSkin == Lunar.includedSpheres + 2) then
+	if (LunarSphereSettings.sphereSkin == Lunar.includedSpheres + 2) then
 
 		-- Show the sphere background image (with a cut-out for the portrait)
 		-- that matches the size of the background to be shown.
@@ -852,7 +852,7 @@ function Lunar.Sphere:SetPortraitBorder()
 		end
 		sphereData.background:SetNormalTexture(LUNAR_ART_PATH .. "sphereBackground" .. textureID);
 
---	end
+	end
 
 end
 
@@ -894,7 +894,7 @@ function Lunar.Sphere:SetSphereColor(r, g, b)
 		if (not ((LunarSphereSettings.sphereSkin > Lunar.includedSpheres) and (LunarSphereSettings.sphereSkin <= Lunar.includedSpheres + 2))) then
 			sphereData.sphereTexture:GetNormalTexture():SetVertexColor(r, g, b);
 		end
-		--sphereData.sphereTexture2:SetLight(1, 0, 0, -0.707, -0.707, 0.7, r, g, b, 1, r, g, b);
+--		sphereData.sphereTexture2:SetLight(1, 0, 0, -0.707, -0.707, 0.7, r, g, b, 1, r, g, b);
 	end
 end
 

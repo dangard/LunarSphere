@@ -1661,6 +1661,7 @@ function Lunar.Settings:Initialize()
 			tempObject:SetWidth(15);
 			tempObject:SetHeight(74);
 			tempObject:SetValueStep(1);
+			tempObject:SetObeyStepOnDrag(true);
 			tempObject:SetFrameLevel(tempFrameContainer:GetFrameLevel() + 3);
 			tempObject:Show();
 			tempObject:SetScript("OnValueChanged", Lunar.Settings.UpdateTextureList);
@@ -4498,11 +4499,11 @@ function Lunar.Settings:StanceIconSetup(stanceIconName, stanceIconWidthBoundry, 
 
 	maxX = GetNumShapeshiftForms();
 
-    if (LunarSphereSettings.debugSpellAdd == true) then
-        maxX = 8;
-    elseif (maxX == 0) then
+	if (LunarSphereSettings.debugSpellAdd == true) then
+		maxX = 8;
+	elseif (maxX == 0) then
 		maxX = 1;
-    end
+	end
 
 	stanceWidth = math.floor(stanceIconWidthBoundry / maxX);
 	if (stanceWidth > maxIconWidth) then
@@ -4532,9 +4533,9 @@ function Lunar.Settings:StanceIconSetup(stanceIconName, stanceIconWidthBoundry, 
 				else
 					shiftIcon, shiftName, shiftActive, shiftCastable = GetShapeshiftFormInfo(x);
 
-if ((LunarSphereSettings.debugSpellAdd == true) and not shiftIcon) then 
-	shiftIcon = "Interface\\Icons\\INV_Misc_QuestionMark";
-end
+					if ((LunarSphereSettings.debugSpellAdd == true) and not shiftIcon) then 
+						shiftIcon = "Interface\\Icons\\INV_Misc_QuestionMark";
+					end
 					-- Rogues have stealth (1) and shadow dance (2), but the shadow
 					-- dance is actually stance 3, not 2.
 					if (select(2, UnitClass("player")) == "ROGUE") then
@@ -6083,7 +6084,7 @@ if not (LunarSphereSettings.memoryDisableSkins) then
 							_G["LSSettingsSkin3D"]:SetCamera(0);
 							_G["LSSettingsSkin3D"]:SetID(_G["LSSettingsTextureIcon" .. (xLoc + (yLoc * 5) + 1)]:GetID());
 							hidePortrait = true;
-	--						SetPortraitTexture(_G["LSSettingsTextureIcon" .. (xLoc + (yLoc * 5) + 1)]:GetNormalTexture(), "player");
+							SetPortraitTexture(_G["LSSettingsTextureIcon" .. (xLoc + (yLoc * 5) + 1)]:GetNormalTexture(), "player");
 						-- class and faction icons
 						elseif ((index > (Lunar.includedSpheres + 2)) and (index <= (Lunar.includedSpheres + LUNAR_EXTRA_SPHERE_ICON_COUNT))) then
 							_G["LSSettingsTextureIcon" .. (xLoc + (yLoc * 5) + 1)]:SetNormalTexture(LUNAR_ART_PATH .. "sphereClass_" .. (index - Lunar.includedSpheres - 2));
